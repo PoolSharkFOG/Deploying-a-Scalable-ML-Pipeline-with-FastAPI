@@ -15,7 +15,7 @@ from ml.model import (
 # TODO: load the cencus.csv data
 project_path = "./"
 data_path = os.path.join(project_path, "data", "census.csv")
-print(data_path)
+print(f"Loading data from {os.path.normpath(data_path).replace(os.sep, '/')}")
 data = pd.read_csv(data_path) # your code here
 
 # TODO: split the provided data to have a train dataset and a test dataset
