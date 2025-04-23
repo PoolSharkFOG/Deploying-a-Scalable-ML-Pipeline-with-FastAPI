@@ -61,10 +61,15 @@ model = train_model(X_train, y_train) # your code here
 # save the model and the encoder
 model_path = os.path.join(project_path, "model", "model.pkl")
 save_model(model, model_path)
+assert os.path.exists(model_path), "Model file was not saved correctly!"
+print(f"Model saved to {os.path.normpath(model_path).replace(os.sep, '/')}")
 encoder_path = os.path.join(project_path, "model", "encoder.pkl")
 save_model(encoder, encoder_path)
+assert os.path.exists(encoder_path), "Encoder file was not saved correctly!"
+print(f"Encoder saved to {os.path.normpath(encoder_path).replace(os.sep, '/')}")
 
 # load the model
+print(f"Loading model from {os.path.normpath(model_path).replace(os.sep, '/')}")
 model = load_model(
     model_path
 ) 

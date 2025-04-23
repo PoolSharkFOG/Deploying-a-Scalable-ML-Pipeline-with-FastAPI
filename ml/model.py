@@ -88,6 +88,8 @@ def load_model(path):
     # TODO: implement the function
     with open(path, "rb") as f:
         model = pickle.load(f)
+    assert model is not None, "Failed to load the model!"
+    return model
 
 
 def performance_on_categorical_slice(
